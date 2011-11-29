@@ -44,14 +44,17 @@
 
 
 // Returns the Uri from the root document for the key provided.
--(id)getRootDocumentUri:(id)value {
+-(id)getRootDocumentUri:(id)value 
+{
     ENSURE_SINGLE_ARG(value,NSString);
     NSURL *url = [JoobMobileSettings getRootDocumentUri:[TiUtils stringValue:value]];
     return [url absoluteString];
 }
 
+
 // Sets default basic authentication credentials.
--(void)setBasicAuthenticationToken:(id)args {
+-(void)setBasicAuthenticationToken:(id)args 
+{
     
     NSLog(@"Setting basic authentication token");
     
@@ -97,7 +100,9 @@
 
 #pragma CallBacks
 
--(void)fireJavascriptCallback:(NSObject*)state httpResult:(JoobMobileHttpResult*)result wasSuccessful:(BOOL)success {
+
+-(void)fireJavascriptCallback:(NSObject*)state httpResult:(JoobMobileHttpResult*)result wasSuccessful:(BOOL)success 
+{
     
     // Define callback.
     KrollCallback* callback;
@@ -121,12 +126,14 @@
 }
 
 
--(KrollCallback*)getJavascriptCallbackFromState:(NSObject*)state type:(NSString*)type {
+-(KrollCallback*)getJavascriptCallbackFromState:(NSObject*)state type:(NSString*)type 
+{
     return [(NSDictionary*)state objectForKey:type];
 }
 
 
--(NSDictionary*)createEventFromJoobMobileHttpResult:(JoobMobileHttpResult*)result {
+-(NSDictionary*)createEventFromJoobMobileHttpResult:(JoobMobileHttpResult*)result 
+{
     NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                            result.uuid,@"uuid",
                            result.responseHeaders, @"headers",
@@ -135,6 +142,7 @@
                            nil];
     return event;
 }
+
 
 -(void)sendDataItemSuccessCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
 {
@@ -159,12 +167,14 @@
     [self fireJavascriptCallback:userState httpResult:result wasSuccessful:true];
 }
 
+
 -(void)postFailureCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
 {
     NSLog(@"[INFO] Received post failure callback: %@",result);
     
     [self fireJavascriptCallback:userState httpResult:result wasSuccessful:false];
 }
+
 
 -(void)getSuccessCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
 {
@@ -173,6 +183,7 @@
     [self fireJavascriptCallback:userState httpResult:result wasSuccessful:true];
 }
 
+
 -(void)getFailureCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
 {
     NSLog(@"[INFO] Received get failure callback: %@",result);
@@ -180,11 +191,14 @@
     [self fireJavascriptCallback:userState httpResult:result wasSuccessful:false];
 }
 
+
 #pragma Exposed methods
 
+
 // Sets an authentication token for use with custom authentication server side.
--(void)setUserToken:(id)args {
-    
+-(void)setUserToken:(id)args 
+{
+    ENSURE_SINGLE_ARG(args,NSDictionary);
     // TODO need to explicitly allow any number of args and build a NSMutableDictionary from them.
     NSDictionary *token = [NSDictionary dictionaryWithObjectsAndKeys:
                            [TiUtils stringValue:[args valueForKey:@"DataType"]],@"DataType",
@@ -246,7 +260,9 @@
     [joobMobile logout];
 }
 
--(id)sendDataItem:(id)args {
+
+-(id)sendDataItem:(id)args 
+{
     ENSURE_SINGLE_ARG(args,NSDictionary);
     
     
@@ -285,7 +301,9 @@
                          timeToLive:timeToLive];
 }
 
--(id)GET:(id)args {
+
+-(id)GET:(id)args 
+{
     ENSURE_SINGLE_ARG(args,NSDictionary);
     
     
@@ -314,7 +332,9 @@
     
 }
 
--(id)POST:(id)args {
+
+-(id)POST:(id)args 
+{
     ENSURE_SINGLE_ARG(args,NSDictionary);
 
     
