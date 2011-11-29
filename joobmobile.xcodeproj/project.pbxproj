@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		24DD6CF91134B3F500162E58 /* ComJoobmobileModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DD6CF71134B3F500162E58 /* ComJoobmobileModule.h */; };
+		24DD6CFA1134B3F500162E58 /* ComJoobmobileModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DD6CF81134B3F500162E58 /* ComJoobmobileModule.m */; };
+		24DE9E1111C5FE74003F90F6 /* ComJoobmobileModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = 24DE9E0F11C5FE74003F90F6 /* ComJoobmobileModuleAssets.h */; };
+		24DE9E1211C5FE74003F90F6 /* ComJoobmobileModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComJoobmobileModuleAssets.m */; };
+		27C376C6147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C376C4147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.h */; };
+		27C376C7147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C376C5147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.m */; };
+		27C37711147B88D200C59E12 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3770E147B88D200C59E12 /* CoreData.framework */; };
+		27C37712147B88D200C59E12 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3770F147B88D200C59E12 /* CoreLocation.framework */; };
+		27C37713147B88D200C59E12 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C37710147B88D200C59E12 /* SystemConfiguration.framework */; };
+		27C3773B147B90CF00C59E12 /* JoobMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37719147B90CF00C59E12 /* JoobMobile.h */; };
+		27C3773C147B90CF00C59E12 /* JoobMobileAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3771A147B90CF00C59E12 /* JoobMobileAuthentication.h */; };
+		27C3773D147B90CF00C59E12 /* JoobMobileAuthenticationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3771B147B90CF00C59E12 /* JoobMobileAuthenticationDelegate.h */; };
+		27C3773E147B90CF00C59E12 /* JoobMobileAuthenticationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3771C147B90CF00C59E12 /* JoobMobileAuthenticationUtils.h */; };
+		27C3773F147B90CF00C59E12 /* JoobMobileBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3771D147B90CF00C59E12 /* JoobMobileBase64.h */; };
+		27C37740147B90CF00C59E12 /* JoobMobileConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3771E147B90CF00C59E12 /* JoobMobileConnection.h */; };
+		27C37741147B90CF00C59E12 /* JoobMobileConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3771F147B90CF00C59E12 /* JoobMobileConnectionDelegate.h */; };
+		27C37742147B90CF00C59E12 /* JoobMobileDatabaseUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37720147B90CF00C59E12 /* JoobMobileDatabaseUtilities.h */; };
+		27C37743147B90CF00C59E12 /* JoobMobileDataItemUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37721147B90CF00C59E12 /* JoobMobileDataItemUtilities.h */; };
+		27C37744147B90CF00C59E12 /* JoobMobileDataTank.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37722147B90CF00C59E12 /* JoobMobileDataTank.h */; };
+		27C37745147B90CF00C59E12 /* JoobMobileFileUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37723147B90CF00C59E12 /* JoobMobileFileUtilities.h */; };
+		27C37746147B90CF00C59E12 /* JoobMobileGeoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37724147B90CF00C59E12 /* JoobMobileGeoManager.h */; };
+		27C37747147B90CF00C59E12 /* JoobMobileHardware.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37725147B90CF00C59E12 /* JoobMobileHardware.h */; };
+		27C37748147B90CF00C59E12 /* JoobMobileHttpResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37726147B90CF00C59E12 /* JoobMobileHttpResult.h */; };
+		27C37749147B90CF00C59E12 /* JoobMobileMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37727147B90CF00C59E12 /* JoobMobileMessage.h */; };
+		27C3774A147B90CF00C59E12 /* JoobMobileMessageStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37728147B90CF00C59E12 /* JoobMobileMessageStore.h */; };
+		27C3774B147B90CF00C59E12 /* JoobMobileMessageStoreDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37729147B90CF00C59E12 /* JoobMobileMessageStoreDelegate.h */; };
+		27C3774C147B90CF00C59E12 /* JoobMobileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3772A147B90CF00C59E12 /* JoobMobileParser.h */; };
+		27C3774D147B90CF00C59E12 /* JoobMobileParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3772B147B90CF00C59E12 /* JoobMobileParserDelegate.h */; };
+		27C3774E147B90CF00C59E12 /* JoobMobilePersistentMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3772C147B90CF00C59E12 /* JoobMobilePersistentMessage.h */; };
+		27C3774F147B90CF00C59E12 /* JoobMobilePriorityQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3772D147B90CF00C59E12 /* JoobMobilePriorityQueue.h */; };
+		27C37750147B90CF00C59E12 /* JoobMobilePushNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3772E147B90CF00C59E12 /* JoobMobilePushNotificationManager.h */; };
+		27C37751147B90CF00C59E12 /* JoobMobileQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3772F147B90CF00C59E12 /* JoobMobileQueue.h */; };
+		27C37752147B90CF00C59E12 /* JoobMobileQueueEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37730147B90CF00C59E12 /* JoobMobileQueueEntry.h */; };
+		27C37753147B90CF00C59E12 /* JoobMobileReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37731147B90CF00C59E12 /* JoobMobileReachability.h */; };
+		27C37754147B90CF00C59E12 /* JoobMobileSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37732147B90CF00C59E12 /* JoobMobileSettings.h */; };
+		27C37755147B90CF00C59E12 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37733147B90CF00C59E12 /* JSON.h */; };
+		27C37756147B90CF00C59E12 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37734147B90CF00C59E12 /* NSObject+SBJSON.h */; };
+		27C37757147B90CF00C59E12 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37735147B90CF00C59E12 /* NSString+SBJSON.h */; };
+		27C37758147B90CF00C59E12 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37736147B90CF00C59E12 /* Reachability.h */; };
+		27C37759147B90CF00C59E12 /* ReachabilityAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37737147B90CF00C59E12 /* ReachabilityAppDelegate.h */; };
+		27C3775A147B90CF00C59E12 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37738147B90CF00C59E12 /* SBJsonBase.h */; };
+		27C3775B147B90CF00C59E12 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C37739147B90CF00C59E12 /* SBJsonParser.h */; };
+		27C3775C147B90CF00C59E12 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 27C3773A147B90CF00C59E12 /* SBJsonWriter.h */; };
+		27C3775E147B90F200C59E12 /* JoobMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C3775D147B90F200C59E12 /* JoobMobile.a */; };
+		AA747D9F0F9514B9006C5449 /* ComJoobmobile_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComJoobmobile_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = joobmobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6CF71134B3F500162E58 /* ComJoobmobileModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComJoobmobileModule.h; path = Classes/ComJoobmobileModule.h; sourceTree = "<group>"; };
+		24DD6CF81134B3F500162E58 /* ComJoobmobileModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComJoobmobileModule.m; path = Classes/ComJoobmobileModule.m; sourceTree = "<group>"; };
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		24DE9E0F11C5FE74003F90F6 /* ComJoobmobileModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComJoobmobileModuleAssets.h; path = Classes/ComJoobmobileModuleAssets.h; sourceTree = "<group>"; };
+		24DE9E1011C5FE74003F90F6 /* ComJoobmobileModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComJoobmobileModuleAssets.m; path = Classes/ComJoobmobileModuleAssets.m; sourceTree = "<group>"; };
+		27C376C4147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComJoobmobileJoobMobileProxy.h; path = Classes/ComJoobmobileJoobMobileProxy.h; sourceTree = "<group>"; };
+		27C376C5147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComJoobmobileJoobMobileProxy.m; path = Classes/ComJoobmobileJoobMobileProxy.m; sourceTree = "<group>"; };
+		27C3770E147B88D200C59E12 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		27C3770F147B88D200C59E12 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		27C37710147B88D200C59E12 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		27C37719147B90CF00C59E12 /* JoobMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobile.h; sourceTree = "<group>"; };
+		27C3771A147B90CF00C59E12 /* JoobMobileAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileAuthentication.h; sourceTree = "<group>"; };
+		27C3771B147B90CF00C59E12 /* JoobMobileAuthenticationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileAuthenticationDelegate.h; sourceTree = "<group>"; };
+		27C3771C147B90CF00C59E12 /* JoobMobileAuthenticationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileAuthenticationUtils.h; sourceTree = "<group>"; };
+		27C3771D147B90CF00C59E12 /* JoobMobileBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileBase64.h; sourceTree = "<group>"; };
+		27C3771E147B90CF00C59E12 /* JoobMobileConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileConnection.h; sourceTree = "<group>"; };
+		27C3771F147B90CF00C59E12 /* JoobMobileConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileConnectionDelegate.h; sourceTree = "<group>"; };
+		27C37720147B90CF00C59E12 /* JoobMobileDatabaseUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileDatabaseUtilities.h; sourceTree = "<group>"; };
+		27C37721147B90CF00C59E12 /* JoobMobileDataItemUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileDataItemUtilities.h; sourceTree = "<group>"; };
+		27C37722147B90CF00C59E12 /* JoobMobileDataTank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileDataTank.h; sourceTree = "<group>"; };
+		27C37723147B90CF00C59E12 /* JoobMobileFileUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileFileUtilities.h; sourceTree = "<group>"; };
+		27C37724147B90CF00C59E12 /* JoobMobileGeoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileGeoManager.h; sourceTree = "<group>"; };
+		27C37725147B90CF00C59E12 /* JoobMobileHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileHardware.h; sourceTree = "<group>"; };
+		27C37726147B90CF00C59E12 /* JoobMobileHttpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileHttpResult.h; sourceTree = "<group>"; };
+		27C37727147B90CF00C59E12 /* JoobMobileMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMessage.h; sourceTree = "<group>"; };
+		27C37728147B90CF00C59E12 /* JoobMobileMessageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMessageStore.h; sourceTree = "<group>"; };
+		27C37729147B90CF00C59E12 /* JoobMobileMessageStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMessageStoreDelegate.h; sourceTree = "<group>"; };
+		27C3772A147B90CF00C59E12 /* JoobMobileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileParser.h; sourceTree = "<group>"; };
+		27C3772B147B90CF00C59E12 /* JoobMobileParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileParserDelegate.h; sourceTree = "<group>"; };
+		27C3772C147B90CF00C59E12 /* JoobMobilePersistentMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobilePersistentMessage.h; sourceTree = "<group>"; };
+		27C3772D147B90CF00C59E12 /* JoobMobilePriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobilePriorityQueue.h; sourceTree = "<group>"; };
+		27C3772E147B90CF00C59E12 /* JoobMobilePushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobilePushNotificationManager.h; sourceTree = "<group>"; };
+		27C3772F147B90CF00C59E12 /* JoobMobileQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileQueue.h; sourceTree = "<group>"; };
+		27C37730147B90CF00C59E12 /* JoobMobileQueueEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileQueueEntry.h; sourceTree = "<group>"; };
+		27C37731147B90CF00C59E12 /* JoobMobileReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileReachability.h; sourceTree = "<group>"; };
+		27C37732147B90CF00C59E12 /* JoobMobileSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileSettings.h; sourceTree = "<group>"; };
+		27C37733147B90CF00C59E12 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		27C37734147B90CF00C59E12 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		27C37735147B90CF00C59E12 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		27C37736147B90CF00C59E12 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		27C37737147B90CF00C59E12 /* ReachabilityAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityAppDelegate.h; sourceTree = "<group>"; };
+		27C37738147B90CF00C59E12 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		27C37739147B90CF00C59E12 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		27C3773A147B90CF00C59E12 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		27C3775D147B90F200C59E12 /* JoobMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JoobMobile.a; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* ComJoobmobile_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComJoobmobile_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libComJoobmobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComJoobmobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27C3775E147B90F200C59E12 /* JoobMobile.a in Frameworks */,
+				27C37711147B88D200C59E12 /* CoreData.framework in Frameworks */,
+				27C37712147B88D200C59E12 /* CoreLocation.framework in Frameworks */,
+				27C37713147B88D200C59E12 /* SystemConfiguration.framework in Frameworks */,
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libComJoobmobile.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* joobmobile */ = {
+			isa = PBXGroup;
+			children = (
+				27C3775D147B90F200C59E12 /* JoobMobile.a */,
+				27C37718147B90CF00C59E12 /* Headers */,
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = joobmobile;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27C3770E147B88D200C59E12 /* CoreData.framework */,
+				27C3770F147B88D200C59E12 /* CoreLocation.framework */,
+				27C37710147B88D200C59E12 /* SystemConfiguration.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				24DE9E0F11C5FE74003F90F6 /* ComJoobmobileModuleAssets.h */,
+				24DE9E1011C5FE74003F90F6 /* ComJoobmobileModuleAssets.m */,
+				24DD6CF71134B3F500162E58 /* ComJoobmobileModule.h */,
+				24DD6CF81134B3F500162E58 /* ComJoobmobileModule.m */,
+				27C376C4147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.h */,
+				27C376C5147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		27C37718147B90CF00C59E12 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				27C37719147B90CF00C59E12 /* JoobMobile.h */,
+				27C3771A147B90CF00C59E12 /* JoobMobileAuthentication.h */,
+				27C3771B147B90CF00C59E12 /* JoobMobileAuthenticationDelegate.h */,
+				27C3771C147B90CF00C59E12 /* JoobMobileAuthenticationUtils.h */,
+				27C3771D147B90CF00C59E12 /* JoobMobileBase64.h */,
+				27C3771E147B90CF00C59E12 /* JoobMobileConnection.h */,
+				27C3771F147B90CF00C59E12 /* JoobMobileConnectionDelegate.h */,
+				27C37720147B90CF00C59E12 /* JoobMobileDatabaseUtilities.h */,
+				27C37721147B90CF00C59E12 /* JoobMobileDataItemUtilities.h */,
+				27C37722147B90CF00C59E12 /* JoobMobileDataTank.h */,
+				27C37723147B90CF00C59E12 /* JoobMobileFileUtilities.h */,
+				27C37724147B90CF00C59E12 /* JoobMobileGeoManager.h */,
+				27C37725147B90CF00C59E12 /* JoobMobileHardware.h */,
+				27C37726147B90CF00C59E12 /* JoobMobileHttpResult.h */,
+				27C37727147B90CF00C59E12 /* JoobMobileMessage.h */,
+				27C37728147B90CF00C59E12 /* JoobMobileMessageStore.h */,
+				27C37729147B90CF00C59E12 /* JoobMobileMessageStoreDelegate.h */,
+				27C3772A147B90CF00C59E12 /* JoobMobileParser.h */,
+				27C3772B147B90CF00C59E12 /* JoobMobileParserDelegate.h */,
+				27C3772C147B90CF00C59E12 /* JoobMobilePersistentMessage.h */,
+				27C3772D147B90CF00C59E12 /* JoobMobilePriorityQueue.h */,
+				27C3772E147B90CF00C59E12 /* JoobMobilePushNotificationManager.h */,
+				27C3772F147B90CF00C59E12 /* JoobMobileQueue.h */,
+				27C37730147B90CF00C59E12 /* JoobMobileQueueEntry.h */,
+				27C37731147B90CF00C59E12 /* JoobMobileReachability.h */,
+				27C37732147B90CF00C59E12 /* JoobMobileSettings.h */,
+				27C37733147B90CF00C59E12 /* JSON.h */,
+				27C37734147B90CF00C59E12 /* NSObject+SBJSON.h */,
+				27C37735147B90CF00C59E12 /* NSString+SBJSON.h */,
+				27C37736147B90CF00C59E12 /* Reachability.h */,
+				27C37737147B90CF00C59E12 /* ReachabilityAppDelegate.h */,
+				27C37738147B90CF00C59E12 /* SBJsonBase.h */,
+				27C37739147B90CF00C59E12 /* SBJsonParser.h */,
+				27C3773A147B90CF00C59E12 /* SBJsonWriter.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* ComJoobmobile_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA747D9F0F9514B9006C5449 /* ComJoobmobile_Prefix.pch in Headers */,
+				24DD6CF91134B3F500162E58 /* ComJoobmobileModule.h in Headers */,
+				24DE9E1111C5FE74003F90F6 /* ComJoobmobileModuleAssets.h in Headers */,
+				27C376C6147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.h in Headers */,
+				27C3773B147B90CF00C59E12 /* JoobMobile.h in Headers */,
+				27C3773C147B90CF00C59E12 /* JoobMobileAuthentication.h in Headers */,
+				27C3773D147B90CF00C59E12 /* JoobMobileAuthenticationDelegate.h in Headers */,
+				27C3773E147B90CF00C59E12 /* JoobMobileAuthenticationUtils.h in Headers */,
+				27C3773F147B90CF00C59E12 /* JoobMobileBase64.h in Headers */,
+				27C37740147B90CF00C59E12 /* JoobMobileConnection.h in Headers */,
+				27C37741147B90CF00C59E12 /* JoobMobileConnectionDelegate.h in Headers */,
+				27C37742147B90CF00C59E12 /* JoobMobileDatabaseUtilities.h in Headers */,
+				27C37743147B90CF00C59E12 /* JoobMobileDataItemUtilities.h in Headers */,
+				27C37744147B90CF00C59E12 /* JoobMobileDataTank.h in Headers */,
+				27C37745147B90CF00C59E12 /* JoobMobileFileUtilities.h in Headers */,
+				27C37746147B90CF00C59E12 /* JoobMobileGeoManager.h in Headers */,
+				27C37747147B90CF00C59E12 /* JoobMobileHardware.h in Headers */,
+				27C37748147B90CF00C59E12 /* JoobMobileHttpResult.h in Headers */,
+				27C37749147B90CF00C59E12 /* JoobMobileMessage.h in Headers */,
+				27C3774A147B90CF00C59E12 /* JoobMobileMessageStore.h in Headers */,
+				27C3774B147B90CF00C59E12 /* JoobMobileMessageStoreDelegate.h in Headers */,
+				27C3774C147B90CF00C59E12 /* JoobMobileParser.h in Headers */,
+				27C3774D147B90CF00C59E12 /* JoobMobileParserDelegate.h in Headers */,
+				27C3774E147B90CF00C59E12 /* JoobMobilePersistentMessage.h in Headers */,
+				27C3774F147B90CF00C59E12 /* JoobMobilePriorityQueue.h in Headers */,
+				27C37750147B90CF00C59E12 /* JoobMobilePushNotificationManager.h in Headers */,
+				27C37751147B90CF00C59E12 /* JoobMobileQueue.h in Headers */,
+				27C37752147B90CF00C59E12 /* JoobMobileQueueEntry.h in Headers */,
+				27C37753147B90CF00C59E12 /* JoobMobileReachability.h in Headers */,
+				27C37754147B90CF00C59E12 /* JoobMobileSettings.h in Headers */,
+				27C37755147B90CF00C59E12 /* JSON.h in Headers */,
+				27C37756147B90CF00C59E12 /* NSObject+SBJSON.h in Headers */,
+				27C37757147B90CF00C59E12 /* NSString+SBJSON.h in Headers */,
+				27C37758147B90CF00C59E12 /* Reachability.h in Headers */,
+				27C37759147B90CF00C59E12 /* ReachabilityAppDelegate.h in Headers */,
+				27C3775A147B90CF00C59E12 /* SBJsonBase.h in Headers */,
+				27C3775B147B90CF00C59E12 /* SBJsonParser.h in Headers */,
+				27C3775C147B90CF00C59E12 /* SBJsonWriter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* joobmobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "joobmobile" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = joobmobile;
+			productName = joobmobile;
+			productReference = D2AAC07E0554694100DB518D /* libComJoobmobile.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "joobmobile" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* joobmobile */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* joobmobile */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24DD6CFA1134B3F500162E58 /* ComJoobmobileModule.m in Sources */,
+				24DE9E1211C5FE74003F90F6 /* ComJoobmobileModuleAssets.m in Sources */,
+				27C376C7147B880A00C59E12 /* ComJoobmobileJoobMobileProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* joobmobile */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/ComJoobmobile.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Documents/Source/AppceleratorModule copy\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComJoobmobile_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = ComJoobmobile;
+				SDKROOT = iphoneos4.3;
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				DSTROOT = /tmp/ComJoobmobile.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Documents/Source/AppceleratorModule copy\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComJoobmobile_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = ComJoobmobile;
+				SDKROOT = iphoneos4.3;
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "joobmobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "joobmobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}

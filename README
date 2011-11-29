@@ -1,0 +1,15 @@
+JOOB Mobile Appcelerator Titanium Module
+===========================================
+
+To build this module from source you need to perform the following steps.
+
+Copy the header files from a Joob Mobile iOS framework(v2.0 currently) to the 'Headers' folder in the project and copy the JoobMobile.a file into the project root. 
+
+You should then be able to execute the titanium build script to generate the module: 
+
+./build.py 
+
+You can then deploy the module as per normal. 
+
+One point to note however is the module currently depends on the DataStore.mom file as distributed with the Joob Mobile framework, this will need to be copied into the 'Resources' folder within a titanium application project along side the usual app.js. 
+
