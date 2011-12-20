@@ -199,13 +199,10 @@
 -(void)setUserToken:(id)args 
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
-    // TODO need to explicitly allow any number of args and build a NSMutableDictionary from them.
-    NSDictionary *token = [NSDictionary dictionaryWithObjectsAndKeys:
-                           [TiUtils stringValue:[args valueForKey:@"DataType"]],@"DataType",
-                           [TiUtils stringValue:[args valueForKey:@"Username"]], @"UserName",
-                           [TiUtils stringValue:[args valueForKey:@"Password"]], @"Password", 
-                           nil];
-    [JoobMobileSettings setUserToken:token];
+    
+    // As the args are already converted to a NSDictionary type pass straight through,
+    // Mobile will throw an exception if the token is invalid. 
+    [JoobMobileSettings setUserToken:args];
 }
 
 
