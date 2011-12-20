@@ -26,6 +26,7 @@
 
 @synthesize joobMobile, rootDocumentUrl;
 
+
 -(void) _configure
 {
     
@@ -35,6 +36,8 @@
     
     [super _configure];
 }
+
+
 -(void) _destroy
 {
     RELEASE_TO_NIL(rootDocumentUrl);
@@ -262,30 +265,31 @@
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
     
-    
     // Define callbacks for success and failure.
     SEL successCallback = @selector(sendDataItemSuccessCallback:joobMobileHttpResult:);
     SEL failureCallback = @selector(sendDataItemFailureCallback:joobMobileHttpResult:);
-    
     
     // Set priority and time to live values.
     NSString *priority = [TiUtils stringValue:[args valueForKey:@"priority"]];
     NSInteger timeToLive = [TiUtils intValue:[args valueForKey:@"timeToLive"]];
     
-    
     // If priority and time to live are not defined set sane defaults.
     if (priority == nil) {priority = MESSAGE_PRIORITY_NORMAL;}
     if ([args valueForKey:@"timeToLive"] == nil) {timeToLive = TIMETOLIVE_TRYONCE;}
-    
     
     // Create the data item payload.
     NSMutableDictionary *messagePayload = [[NSMutableDictionary alloc] init];
     [messagePayload setValue:[TiUtils stringValue:[args valueForKey:@"payload"]] 
                       forKey:[TiUtils stringValue:[args valueForKey:@"dataType"]]];
     
+    // Set default persist value so if its not passed in we go with the safe option.
+    BOOL persistToDisk = true;
+    
+    if ([args valueForKey:@"persistToDisk"] != NULL) {
+        persistToDisk =  [TiUtils boolValue:[args valueForKey:@"persistToDisk"]];
+    }
     
     NSLog(@"[INFO] Calling JoobMobile API to send Dataitem", joobMobile);
-    
     
     // Call JoobMobile to send the data item.
     return [joobMobile sendDataItem:messagePayload 
@@ -295,38 +299,35 @@
                     successCallback:successCallback 
                     failureCallback:failureCallback 
                            priority:priority 
-                         timeToLive:timeToLive];
+                         timeToLive:timeToLive
+                      persistToDisk:persistToDisk];
 }
 
 
 -(id)GET:(id)args 
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
-    
-    
+        
     // Define callbacks for success and failure.
     SEL successCallback = @selector(getSuccessCallback:joobMobileHttpResult:);
     SEL failureCallback = @selector(getFailureCallback:joobMobileHttpResult:);
-    
     
     // Set priority and time to live values.
     NSString *priority = [TiUtils stringValue:[args valueForKey:@"priority"]];
     NSInteger timeToLive = [TiUtils intValue:[args valueForKey:@"timeToLive"]];
     
-    
     // Set priority and time to live values to sane defaults if they are not passed in.
     if (priority == nil) {priority = MESSAGE_PRIORITY_NORMAL;}
     if ([args valueForKey:@"timeToLive"] == nil) {timeToLive = TIMETOLIVE_TRYONCE;}
     
-    
+    // Call JoobMobile and return UUID
     return [joobMobile get:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]] 
                  userState:args 
             callbackTarget:self 
            successCallback:successCallback
            failureCallback:failureCallback 
                   priority:priority 
-                timeToLive:timeToLive];
-    
+                timeToLive:timeToLive];    
 }
 
 
@@ -334,21 +335,24 @@
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
 
-    
     // Define callbacks.
     SEL successCallback = @selector(postSuccessCallback:joobMobileHttpResult:);
     SEL failureCallback = @selector(postFailureCallback:joobMobileHttpResult:);
-    
     
     // Set priority and time to live values.
     NSString *priority = [TiUtils stringValue:[args valueForKey:@"priority"]];
     NSInteger timeToLive = [TiUtils intValue:[args valueForKey:@"timeToLive"]];
     
-    
     // Set priority and time to live values to sane defaults if they are not passed in.
     if (priority == nil) {priority = MESSAGE_PRIORITY_NORMAL;}
     if ([args valueForKey:@"timeToLive"] == nil) {timeToLive = TIMETOLIVE_TRYONCE;}
 
+    // Set default persist value so if its not passed in we go with the safe option.
+    BOOL persistToDisk = true;
+    
+    if ([args valueForKey:@"persistToDisk"] != NULL) {
+        persistToDisk =  [TiUtils boolValue:[args valueForKey:@"persistToDisk"]];
+    }
     
     // Call JoobMobile and return UUID.
     return [joobMobile post:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]] 
@@ -358,7 +362,8 @@
             successCallback:successCallback
             failureCallback:failureCallback 
                    priority:priority 
-                 timeToLive:timeToLive];
+                 timeToLive:timeToLive
+              persistToDisk:persistToDisk];
 }
 
 @end
