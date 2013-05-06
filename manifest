@@ -2,16 +2,17 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.8
-description: JoobMobile Appcelerator Module
-authors: Jeremy Swenson, Dale Anderson
-license: Apache 2.0
-copyright: Copyright (c) 2011 by Quickstone Software LLC & Jade Software Corporation Ltd
+version: 3.9.9.9
+apiversion: 2
+description: My module
+author: Jade Software Corporation
+license: Specify your license
+copyright: Copyright (c) 2013 by Your Company
 
 
 # these should not be edited
-name: joobmobile
-moduleid: com.joobmobile
-guid: ba0c891a-70e0-4a09-9b5b-218fd1cdbed0
+name: JOOB Mobile
+moduleid: com.jadesoftware.joob.mobile
+guid: fd8acb6d-7707-4845-a9ab-0d5b5c35f503
 platform: iphone
-minsdk: 1.7.5
+minsdk: 3.1.0.GA

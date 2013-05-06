@@ -1,16 +1,16 @@
-# joobmobile Module
+# JOOB Mobile Module
 
 ## Description
 
 TODO: Enter your module description here
 
-## Accessing the joobmobile Module
+## Accessing the JOOB Mobile Module
 
 To access this module from JavaScript, you would do the following:
 
-	var joobmobile = require("com.joobmobile");
+	var JOOB Mobile = require("com.jadesoftware.joob.mobile");
 
-The joobmobile variable is a reference to the Module object.	
+The JOOB Mobile variable is a reference to the Module object.	
 
 ## Reference
 
