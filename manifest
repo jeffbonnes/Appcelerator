@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 3.9.9.9
+version: 4.0.0.0
 apiversion: 2
 description: JOOB Mobile Module
 author: Jade Software Corporation
