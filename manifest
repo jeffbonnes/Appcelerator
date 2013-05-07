@@ -4,10 +4,10 @@
 #
 version: 3.9.9.9
 apiversion: 2
-description: My module
+description: JOOB Mobile Module
 author: Jade Software Corporation
 license: Specify your license
-copyright: Copyright (c) 2013 by Your Company
+copyright: Copyright (c) 2013 by Quickstone Software LLC & Jade Software Corporation Ltd.
 
 
 # these should not be edited
