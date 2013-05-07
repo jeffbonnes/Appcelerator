@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TiProxy.h"
-#import <JoobMobile/JoobMobile.h>
+#import "JoobMobile.h"
 
 @interface ComJadesoftwareJoobMobileProxy : TiProxy<JoobMobileDelegate> {
 

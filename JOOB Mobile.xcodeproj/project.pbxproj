@@ -28,9 +28,49 @@
 		24DE9E1211C5FE74003F90F6 /* ComJadesoftwareJoobMobileModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = 24DE9E1011C5FE74003F90F6 /* ComJadesoftwareJoobMobileModuleAssets.m */; };
 		AA747D9F0F9514B9006C5449 /* ComJadesoftwareJoobMobile_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComJadesoftwareJoobMobile_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		BC2C9E4B1738E8E900C43CCC /* ISO8601DateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E231738E8E900C43CCC /* ISO8601DateFormatter.h */; };
+		BC2C9E4C1738E8E900C43CCC /* JoobMobile.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E241738E8E900C43CCC /* JoobMobile.h */; };
+		BC2C9E4D1738E8E900C43CCC /* JoobMobileAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E251738E8E900C43CCC /* JoobMobileAuthentication.h */; };
+		BC2C9E4E1738E8E900C43CCC /* JoobMobileAuthenticationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E261738E8E900C43CCC /* JoobMobileAuthenticationDelegate.h */; };
+		BC2C9E4F1738E8E900C43CCC /* JoobMobileAuthenticationUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E271738E8E900C43CCC /* JoobMobileAuthenticationUtils.h */; };
+		BC2C9E501738E8E900C43CCC /* JoobMobileBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E281738E8E900C43CCC /* JoobMobileBase64.h */; };
+		BC2C9E511738E8E900C43CCC /* JoobMobileConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E291738E8E900C43CCC /* JoobMobileConnection.h */; };
+		BC2C9E521738E8E900C43CCC /* JoobMobileConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E2A1738E8E900C43CCC /* JoobMobileConnectionDelegate.h */; };
+		BC2C9E531738E8E900C43CCC /* JoobMobileConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E2B1738E8E900C43CCC /* JoobMobileConstants.h */; };
+		BC2C9E541738E8E900C43CCC /* JoobMobileCryptoHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E2C1738E8E900C43CCC /* JoobMobileCryptoHelper.h */; };
+		BC2C9E551738E8E900C43CCC /* JoobMobileDatabaseUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E2D1738E8E900C43CCC /* JoobMobileDatabaseUtilities.h */; };
+		BC2C9E561738E8E900C43CCC /* JoobMobileDataItemUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E2E1738E8E900C43CCC /* JoobMobileDataItemUtilities.h */; };
+		BC2C9E571738E8E900C43CCC /* JoobMobileDataTank.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E2F1738E8E900C43CCC /* JoobMobileDataTank.h */; };
+		BC2C9E581738E8E900C43CCC /* JoobMobileEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E301738E8E900C43CCC /* JoobMobileEvent.h */; };
+		BC2C9E591738E8E900C43CCC /* JoobMobileEventDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E311738E8E900C43CCC /* JoobMobileEventDispatcher.h */; };
+		BC2C9E5A1738E8E900C43CCC /* JoobMobileFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E321738E8E900C43CCC /* JoobMobileFactory.h */; };
+		BC2C9E5B1738E8E900C43CCC /* JoobMobileFileUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E331738E8E900C43CCC /* JoobMobileFileUtilities.h */; };
+		BC2C9E5C1738E8E900C43CCC /* JoobMobileGeoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E341738E8E900C43CCC /* JoobMobileGeoManager.h */; };
+		BC2C9E5D1738E8E900C43CCC /* JoobMobileHardware.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E351738E8E900C43CCC /* JoobMobileHardware.h */; };
+		BC2C9E5E1738E8E900C43CCC /* JoobMobileHttpResult.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E361738E8E900C43CCC /* JoobMobileHttpResult.h */; };
+		BC2C9E5F1738E8E900C43CCC /* JoobMobileMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E371738E8E900C43CCC /* JoobMobileMessage.h */; };
+		BC2C9E601738E8E900C43CCC /* JoobMobileMessageStore.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E381738E8E900C43CCC /* JoobMobileMessageStore.h */; };
+		BC2C9E611738E8E900C43CCC /* JoobMobileMessageStoreDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E391738E8E900C43CCC /* JoobMobileMessageStoreDelegate.h */; };
+		BC2C9E621738E8E900C43CCC /* JoobMobileMultiFactorAuthenticationHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E3A1738E8E900C43CCC /* JoobMobileMultiFactorAuthenticationHandler.h */; };
+		BC2C9E631738E8E900C43CCC /* JoobMobileMultiFactorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E3B1738E8E900C43CCC /* JoobMobileMultiFactorToken.h */; };
+		BC2C9E641738E8E900C43CCC /* JoobMobileOperationProfiling.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E3C1738E8E900C43CCC /* JoobMobileOperationProfiling.h */; };
+		BC2C9E651738E8E900C43CCC /* JoobMobileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E3D1738E8E900C43CCC /* JoobMobileParser.h */; };
+		BC2C9E661738E8E900C43CCC /* JoobMobileParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E3E1738E8E900C43CCC /* JoobMobileParserDelegate.h */; };
+		BC2C9E671738E8E900C43CCC /* JoobMobilePersistentMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E3F1738E8E900C43CCC /* JoobMobilePersistentMessage.h */; };
+		BC2C9E681738E8E900C43CCC /* JoobMobilePriorityQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E401738E8E900C43CCC /* JoobMobilePriorityQueue.h */; };
+		BC2C9E691738E8E900C43CCC /* JoobMobilePushNotificationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E411738E8E900C43CCC /* JoobMobilePushNotificationManager.h */; };
+		BC2C9E6A1738E8E900C43CCC /* JoobMobileQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E421738E8E900C43CCC /* JoobMobileQueue.h */; };
+		BC2C9E6B1738E8E900C43CCC /* JoobMobileQueueEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E431738E8E900C43CCC /* JoobMobileQueueEntry.h */; };
+		BC2C9E6C1738E8E900C43CCC /* JoobMobileReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E441738E8E900C43CCC /* JoobMobileReachability.h */; };
+		BC2C9E6D1738E8E900C43CCC /* JoobMobileReachabilityAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E451738E8E900C43CCC /* JoobMobileReachabilityAppDelegate.h */; };
+		BC2C9E6E1738E8E900C43CCC /* JoobMobileRemoteLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E461738E8E900C43CCC /* JoobMobileRemoteLogger.h */; };
+		BC2C9E6F1738E8E900C43CCC /* JoobMobileSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E471738E8E900C43CCC /* JoobMobileSettings.h */; };
+		BC2C9E701738E8E900C43CCC /* JoobMobileVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E481738E8E900C43CCC /* JoobMobileVersion.h */; };
+		BC2C9E711738E8E900C43CCC /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E491738E8E900C43CCC /* JSONKit.h */; };
+		BC2C9E721738E8E900C43CCC /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2C9E4A1738E8E900C43CCC /* KeychainItemWrapper.h */; };
+		BC2C9E741738E8F700C43CCC /* libJoobMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C9E731738E8F700C43CCC /* libJoobMobile.a */; };
 		BC90C98E17379A85003838AA /* ComJadesoftwareJoobMobileProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC90C98C17379A85003838AA /* ComJadesoftwareJoobMobileProxy.h */; };
 		BC90C98F17379A85003838AA /* ComJadesoftwareJoobMobileProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC90C98D17379A85003838AA /* ComJadesoftwareJoobMobileProxy.m */; };
-		BC90C99117379B89003838AA /* JoobMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC90C99017379B89003838AA /* JoobMobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +91,49 @@
 		24DE9E1011C5FE74003F90F6 /* ComJadesoftwareJoobMobileModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComJadesoftwareJoobMobileModuleAssets.m; path = Classes/ComJadesoftwareJoobMobileModuleAssets.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ComJadesoftwareJoobMobile_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComJadesoftwareJoobMobile_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC2C9E231738E8E900C43CCC /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		BC2C9E241738E8E900C43CCC /* JoobMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobile.h; sourceTree = "<group>"; };
+		BC2C9E251738E8E900C43CCC /* JoobMobileAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileAuthentication.h; sourceTree = "<group>"; };
+		BC2C9E261738E8E900C43CCC /* JoobMobileAuthenticationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileAuthenticationDelegate.h; sourceTree = "<group>"; };
+		BC2C9E271738E8E900C43CCC /* JoobMobileAuthenticationUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileAuthenticationUtils.h; sourceTree = "<group>"; };
+		BC2C9E281738E8E900C43CCC /* JoobMobileBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileBase64.h; sourceTree = "<group>"; };
+		BC2C9E291738E8E900C43CCC /* JoobMobileConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileConnection.h; sourceTree = "<group>"; };
+		BC2C9E2A1738E8E900C43CCC /* JoobMobileConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileConnectionDelegate.h; sourceTree = "<group>"; };
+		BC2C9E2B1738E8E900C43CCC /* JoobMobileConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileConstants.h; sourceTree = "<group>"; };
+		BC2C9E2C1738E8E900C43CCC /* JoobMobileCryptoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileCryptoHelper.h; sourceTree = "<group>"; };
+		BC2C9E2D1738E8E900C43CCC /* JoobMobileDatabaseUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileDatabaseUtilities.h; sourceTree = "<group>"; };
+		BC2C9E2E1738E8E900C43CCC /* JoobMobileDataItemUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileDataItemUtilities.h; sourceTree = "<group>"; };
+		BC2C9E2F1738E8E900C43CCC /* JoobMobileDataTank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileDataTank.h; sourceTree = "<group>"; };
+		BC2C9E301738E8E900C43CCC /* JoobMobileEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileEvent.h; sourceTree = "<group>"; };
+		BC2C9E311738E8E900C43CCC /* JoobMobileEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileEventDispatcher.h; sourceTree = "<group>"; };
+		BC2C9E321738E8E900C43CCC /* JoobMobileFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileFactory.h; sourceTree = "<group>"; };
+		BC2C9E331738E8E900C43CCC /* JoobMobileFileUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileFileUtilities.h; sourceTree = "<group>"; };
+		BC2C9E341738E8E900C43CCC /* JoobMobileGeoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileGeoManager.h; sourceTree = "<group>"; };
+		BC2C9E351738E8E900C43CCC /* JoobMobileHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileHardware.h; sourceTree = "<group>"; };
+		BC2C9E361738E8E900C43CCC /* JoobMobileHttpResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileHttpResult.h; sourceTree = "<group>"; };
+		BC2C9E371738E8E900C43CCC /* JoobMobileMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMessage.h; sourceTree = "<group>"; };
+		BC2C9E381738E8E900C43CCC /* JoobMobileMessageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMessageStore.h; sourceTree = "<group>"; };
+		BC2C9E391738E8E900C43CCC /* JoobMobileMessageStoreDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMessageStoreDelegate.h; sourceTree = "<group>"; };
+		BC2C9E3A1738E8E900C43CCC /* JoobMobileMultiFactorAuthenticationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMultiFactorAuthenticationHandler.h; sourceTree = "<group>"; };
+		BC2C9E3B1738E8E900C43CCC /* JoobMobileMultiFactorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileMultiFactorToken.h; sourceTree = "<group>"; };
+		BC2C9E3C1738E8E900C43CCC /* JoobMobileOperationProfiling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileOperationProfiling.h; sourceTree = "<group>"; };
+		BC2C9E3D1738E8E900C43CCC /* JoobMobileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileParser.h; sourceTree = "<group>"; };
+		BC2C9E3E1738E8E900C43CCC /* JoobMobileParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileParserDelegate.h; sourceTree = "<group>"; };
+		BC2C9E3F1738E8E900C43CCC /* JoobMobilePersistentMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobilePersistentMessage.h; sourceTree = "<group>"; };
+		BC2C9E401738E8E900C43CCC /* JoobMobilePriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobilePriorityQueue.h; sourceTree = "<group>"; };
+		BC2C9E411738E8E900C43CCC /* JoobMobilePushNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobilePushNotificationManager.h; sourceTree = "<group>"; };
+		BC2C9E421738E8E900C43CCC /* JoobMobileQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileQueue.h; sourceTree = "<group>"; };
+		BC2C9E431738E8E900C43CCC /* JoobMobileQueueEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileQueueEntry.h; sourceTree = "<group>"; };
+		BC2C9E441738E8E900C43CCC /* JoobMobileReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileReachability.h; sourceTree = "<group>"; };
+		BC2C9E451738E8E900C43CCC /* JoobMobileReachabilityAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileReachabilityAppDelegate.h; sourceTree = "<group>"; };
+		BC2C9E461738E8E900C43CCC /* JoobMobileRemoteLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileRemoteLogger.h; sourceTree = "<group>"; };
+		BC2C9E471738E8E900C43CCC /* JoobMobileSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileSettings.h; sourceTree = "<group>"; };
+		BC2C9E481738E8E900C43CCC /* JoobMobileVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoobMobileVersion.h; sourceTree = "<group>"; };
+		BC2C9E491738E8E900C43CCC /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		BC2C9E4A1738E8E900C43CCC /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		BC2C9E731738E8F700C43CCC /* libJoobMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJoobMobile.a; path = JoobMobile/lib/libJoobMobile.a; sourceTree = "<group>"; };
 		BC90C98C17379A85003838AA /* ComJadesoftwareJoobMobileProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComJadesoftwareJoobMobileProxy.h; path = Classes/ComJadesoftwareJoobMobileProxy.h; sourceTree = "<group>"; };
 		BC90C98D17379A85003838AA /* ComJadesoftwareJoobMobileProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComJadesoftwareJoobMobileProxy.m; path = Classes/ComJadesoftwareJoobMobileProxy.m; sourceTree = "<group>"; };
-		BC90C99017379B89003838AA /* JoobMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JoobMobile.framework; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libComJadesoftwareJoobMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComJadesoftwareJoobMobile.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-				BC90C99117379B89003838AA /* JoobMobile.framework in Frameworks */,
+				BC2C9E741738E8F700C43CCC /* libJoobMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +161,7 @@
 		0867D691FE84028FC02AAC07 /* JOOB Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				BC2C9E201738E8C300C43CCC /* Libraries */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
@@ -92,7 +173,6 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC90C99017379B89003838AA /* JoobMobile.framework */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -120,6 +200,71 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		BC2C9E201738E8C300C43CCC /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C9E211738E8CE00C43CCC /* JoobMobile */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		BC2C9E211738E8CE00C43CCC /* JoobMobile */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C9E731738E8F700C43CCC /* libJoobMobile.a */,
+				BC2C9E221738E8E900C43CCC /* Headers */,
+			);
+			name = JoobMobile;
+			sourceTree = "<group>";
+		};
+		BC2C9E221738E8E900C43CCC /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C9E231738E8E900C43CCC /* ISO8601DateFormatter.h */,
+				BC2C9E241738E8E900C43CCC /* JoobMobile.h */,
+				BC2C9E251738E8E900C43CCC /* JoobMobileAuthentication.h */,
+				BC2C9E261738E8E900C43CCC /* JoobMobileAuthenticationDelegate.h */,
+				BC2C9E271738E8E900C43CCC /* JoobMobileAuthenticationUtils.h */,
+				BC2C9E281738E8E900C43CCC /* JoobMobileBase64.h */,
+				BC2C9E291738E8E900C43CCC /* JoobMobileConnection.h */,
+				BC2C9E2A1738E8E900C43CCC /* JoobMobileConnectionDelegate.h */,
+				BC2C9E2B1738E8E900C43CCC /* JoobMobileConstants.h */,
+				BC2C9E2C1738E8E900C43CCC /* JoobMobileCryptoHelper.h */,
+				BC2C9E2D1738E8E900C43CCC /* JoobMobileDatabaseUtilities.h */,
+				BC2C9E2E1738E8E900C43CCC /* JoobMobileDataItemUtilities.h */,
+				BC2C9E2F1738E8E900C43CCC /* JoobMobileDataTank.h */,
+				BC2C9E301738E8E900C43CCC /* JoobMobileEvent.h */,
+				BC2C9E311738E8E900C43CCC /* JoobMobileEventDispatcher.h */,
+				BC2C9E321738E8E900C43CCC /* JoobMobileFactory.h */,
+				BC2C9E331738E8E900C43CCC /* JoobMobileFileUtilities.h */,
+				BC2C9E341738E8E900C43CCC /* JoobMobileGeoManager.h */,
+				BC2C9E351738E8E900C43CCC /* JoobMobileHardware.h */,
+				BC2C9E361738E8E900C43CCC /* JoobMobileHttpResult.h */,
+				BC2C9E371738E8E900C43CCC /* JoobMobileMessage.h */,
+				BC2C9E381738E8E900C43CCC /* JoobMobileMessageStore.h */,
+				BC2C9E391738E8E900C43CCC /* JoobMobileMessageStoreDelegate.h */,
+				BC2C9E3A1738E8E900C43CCC /* JoobMobileMultiFactorAuthenticationHandler.h */,
+				BC2C9E3B1738E8E900C43CCC /* JoobMobileMultiFactorToken.h */,
+				BC2C9E3C1738E8E900C43CCC /* JoobMobileOperationProfiling.h */,
+				BC2C9E3D1738E8E900C43CCC /* JoobMobileParser.h */,
+				BC2C9E3E1738E8E900C43CCC /* JoobMobileParserDelegate.h */,
+				BC2C9E3F1738E8E900C43CCC /* JoobMobilePersistentMessage.h */,
+				BC2C9E401738E8E900C43CCC /* JoobMobilePriorityQueue.h */,
+				BC2C9E411738E8E900C43CCC /* JoobMobilePushNotificationManager.h */,
+				BC2C9E421738E8E900C43CCC /* JoobMobileQueue.h */,
+				BC2C9E431738E8E900C43CCC /* JoobMobileQueueEntry.h */,
+				BC2C9E441738E8E900C43CCC /* JoobMobileReachability.h */,
+				BC2C9E451738E8E900C43CCC /* JoobMobileReachabilityAppDelegate.h */,
+				BC2C9E461738E8E900C43CCC /* JoobMobileRemoteLogger.h */,
+				BC2C9E471738E8E900C43CCC /* JoobMobileSettings.h */,
+				BC2C9E481738E8E900C43CCC /* JoobMobileVersion.h */,
+				BC2C9E491738E8E900C43CCC /* JSONKit.h */,
+				BC2C9E4A1738E8E900C43CCC /* KeychainItemWrapper.h */,
+			);
+			name = Headers;
+			path = JoobMobile/Headers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -131,6 +276,46 @@
 				24DD6CF91134B3F500162E58 /* ComJadesoftwareJoobMobileModule.h in Headers */,
 				24DE9E1111C5FE74003F90F6 /* ComJadesoftwareJoobMobileModuleAssets.h in Headers */,
 				BC90C98E17379A85003838AA /* ComJadesoftwareJoobMobileProxy.h in Headers */,
+				BC2C9E4B1738E8E900C43CCC /* ISO8601DateFormatter.h in Headers */,
+				BC2C9E4C1738E8E900C43CCC /* JoobMobile.h in Headers */,
+				BC2C9E4D1738E8E900C43CCC /* JoobMobileAuthentication.h in Headers */,
+				BC2C9E4E1738E8E900C43CCC /* JoobMobileAuthenticationDelegate.h in Headers */,
+				BC2C9E4F1738E8E900C43CCC /* JoobMobileAuthenticationUtils.h in Headers */,
+				BC2C9E501738E8E900C43CCC /* JoobMobileBase64.h in Headers */,
+				BC2C9E511738E8E900C43CCC /* JoobMobileConnection.h in Headers */,
+				BC2C9E521738E8E900C43CCC /* JoobMobileConnectionDelegate.h in Headers */,
+				BC2C9E531738E8E900C43CCC /* JoobMobileConstants.h in Headers */,
+				BC2C9E541738E8E900C43CCC /* JoobMobileCryptoHelper.h in Headers */,
+				BC2C9E551738E8E900C43CCC /* JoobMobileDatabaseUtilities.h in Headers */,
+				BC2C9E561738E8E900C43CCC /* JoobMobileDataItemUtilities.h in Headers */,
+				BC2C9E571738E8E900C43CCC /* JoobMobileDataTank.h in Headers */,
+				BC2C9E581738E8E900C43CCC /* JoobMobileEvent.h in Headers */,
+				BC2C9E591738E8E900C43CCC /* JoobMobileEventDispatcher.h in Headers */,
+				BC2C9E5A1738E8E900C43CCC /* JoobMobileFactory.h in Headers */,
+				BC2C9E5B1738E8E900C43CCC /* JoobMobileFileUtilities.h in Headers */,
+				BC2C9E5C1738E8E900C43CCC /* JoobMobileGeoManager.h in Headers */,
+				BC2C9E5D1738E8E900C43CCC /* JoobMobileHardware.h in Headers */,
+				BC2C9E5E1738E8E900C43CCC /* JoobMobileHttpResult.h in Headers */,
+				BC2C9E5F1738E8E900C43CCC /* JoobMobileMessage.h in Headers */,
+				BC2C9E601738E8E900C43CCC /* JoobMobileMessageStore.h in Headers */,
+				BC2C9E611738E8E900C43CCC /* JoobMobileMessageStoreDelegate.h in Headers */,
+				BC2C9E621738E8E900C43CCC /* JoobMobileMultiFactorAuthenticationHandler.h in Headers */,
+				BC2C9E631738E8E900C43CCC /* JoobMobileMultiFactorToken.h in Headers */,
+				BC2C9E641738E8E900C43CCC /* JoobMobileOperationProfiling.h in Headers */,
+				BC2C9E651738E8E900C43CCC /* JoobMobileParser.h in Headers */,
+				BC2C9E661738E8E900C43CCC /* JoobMobileParserDelegate.h in Headers */,
+				BC2C9E671738E8E900C43CCC /* JoobMobilePersistentMessage.h in Headers */,
+				BC2C9E681738E8E900C43CCC /* JoobMobilePriorityQueue.h in Headers */,
+				BC2C9E691738E8E900C43CCC /* JoobMobilePushNotificationManager.h in Headers */,
+				BC2C9E6A1738E8E900C43CCC /* JoobMobileQueue.h in Headers */,
+				BC2C9E6B1738E8E900C43CCC /* JoobMobileQueueEntry.h in Headers */,
+				BC2C9E6C1738E8E900C43CCC /* JoobMobileReachability.h in Headers */,
+				BC2C9E6D1738E8E900C43CCC /* JoobMobileReachabilityAppDelegate.h in Headers */,
+				BC2C9E6E1738E8E900C43CCC /* JoobMobileRemoteLogger.h in Headers */,
+				BC2C9E6F1738E8E900C43CCC /* JoobMobileSettings.h in Headers */,
+				BC2C9E701738E8E900C43CCC /* JoobMobileVersion.h in Headers */,
+				BC2C9E711738E8E900C43CCC /* JSONKit.h in Headers */,
+				BC2C9E721738E8E900C43CCC /* KeychainItemWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +430,10 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/JoobMobile/lib\"",
+				);
 				OTHER_CFLAGS = (
 					"-DDEBUG",
 					"-DTI_POST_1_2",
@@ -287,7 +475,10 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INSTALL_PATH = /usr/local/lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/JoobMobile/lib\"",
+				);
 				OTHER_CFLAGS = "-DTI_POST_1_2";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ComJadesoftwareJoobMobile;

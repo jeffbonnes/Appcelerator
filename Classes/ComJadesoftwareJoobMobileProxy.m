@@ -17,10 +17,10 @@
 #import "ComJadesoftwareJoobMobileProxy.h"
 #import "TiUtils.h"
 #import "TiBlob.h"
-#import <JoobMobile/JoobMobileFactory.h>
-#import <JoobMobile/JoobMobileAuthenticationUtils.h>
-#import <JoobMobile/JoobMobileMessage.h>
-#import <JoobMobile/JoobMobileSettings.h>
+#import "JoobMobileFactory.h"
+#import "JoobMobileAuthenticationUtils.h"
+#import "JoobMobileMessage.h"
+#import "JoobMobileSettings.h"
 
 @interface ComJadesoftwareJoobMobileProxy()
 
