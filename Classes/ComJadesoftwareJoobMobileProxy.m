@@ -201,18 +201,26 @@
 // Calls login on the Joob Mobile API
 -(void)login:(id)args
 {
-    ENSURE_SINGLE_ARG(args,NSDictionary);
-    
     NSLog(@"[INFO] JoobMobile Login method");
+    
+    enum Args {
+        argRootDocumentUri = 0,
+        argSuccessCallback,
+        argFailureCallback,
+        argTimeout,
+        argCount
+    };
+    
+    ENSURE_ARG_COUNT(args, argCount);
 
-    KrollCallback* successCallback = [[args objectForKey:@"onSuccess"] retain];
-    KrollCallback* failureCallback = [[args objectForKey:@"onFailure"] retain];
-    NSString *url = [TiUtils stringValue:[args valueForKey:@"url"]];
-    int timeToLive = [TiUtils intValue:[args valueForKey:@"timeToLive"]];
+    KrollCallback* successCallback = [[args objectAtIndex:argSuccessCallback] retain];
+    KrollCallback* failureCallback = [[args objectAtIndex:argFailureCallback] retain];
+    NSString *rootDocumentUri = [TiUtils stringValue:[args objectAtIndex:argRootDocumentUri]];
+    int timeToLive = [TiUtils intValue:[args objectAtIndex:argTimeout]];
 
-    if (url != nil) {
+    if (rootDocumentUri != nil) {
         NSLog(@"url wasnt nil");
-        [_joobMobile login:[NSURL URLWithString:url] onSuccess:^(NSString *result) {
+        [_joobMobile login:[NSURL URLWithString:rootDocumentUri] onSuccess:^(NSString *result) {
             NSLog(@"login success callback hit");
 
             NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
@@ -227,6 +235,8 @@
             [failureCallback call:returnArray thisObject:nil];
 
         } withTimeout:timeToLive];
+    } else {
+        
     }
 
     NSLog(@"[INFO] submitted login for processing");
