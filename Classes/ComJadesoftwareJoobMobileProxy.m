@@ -32,13 +32,11 @@
 
 @implementation ComJadesoftwareJoobMobileProxy
 
-@synthesize rootDocumentUrl;
-
 
 -(void) _configure
 {
     
-    _joobMobile = [JoobMobileFactory getApi:self];
+    _joobMobile = [[JoobMobileFactory getApi:self] retain];
     
     NSLog(@"[INFO] JoobMobile is initialized - %@", _joobMobile);
     
@@ -48,7 +46,6 @@
 
 -(void) _destroy
 {
-    RELEASE_TO_NIL(rootDocumentUrl);
     RELEASE_TO_NIL(_joobMobile);
     [super _destroy];
 }
@@ -201,47 +198,34 @@
 }
 
 
-// Sets the default ( root document ) endpoint.
--(void)setRootDocumentUrl:(id)value
-{
-    rootDocumentUrl = [TiUtils stringValue:value];
-    [self replaceValue:value forKey:@"rootDocumentUrl" notification:NO];
-    NSLog(@"[INFO] stored rootDocument: %@",rootDocumentUrl);
-}
-
-
-// Returns the default ( root document ) endpoint.
--(NSString*)rootDocumentUrl
-{
-    return rootDocumentUrl;
-}
-
-
 // Calls login on the Joob Mobile API
 -(void)login:(id)args
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
     
-    NSLog(@"[INFO] JoobMobile Login method - %@",_joobMobile);
-    
-    id successCallback = [args objectForKey:@"onSuccess"];
-    id failureCallback = [args objectForKey:@"onFailure"];
-    id url = [args valueForKey:@"url"];
-    id timeToLive = [args valueForKey:@"timeToLive"];
-    
-    if (url != NULL) {
+    NSLog(@"[INFO] JoobMobile Login method");
+
+    KrollCallback* successCallback = [[args objectForKey:@"onSuccess"] retain];
+    KrollCallback* failureCallback = [[args objectForKey:@"onFailure"] retain];
+    NSString *url = [TiUtils stringValue:[args valueForKey:@"url"]];
+    int timeToLive = [TiUtils intValue:[args valueForKey:@"timeToLive"]];
+
+    if (url != nil) {
+        NSLog(@"url wasnt nil");
         [_joobMobile login:[NSURL URLWithString:url] onSuccess:^(NSString *result) {
-            NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   result,@"result",
-                                   nil];
-            [self _fireEventToListener:@"completed" withObject:event listener:successCallback
-                            thisObject:nil];
+            NSLog(@"login success callback hit");
+
+            NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
+
+            [successCallback call:returnArray thisObject:nil];
+
         } onFailure:^(NSString *result) {
-            NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   result,@"result",
-                                   nil];
-            [self _fireEventToListener:@"completed" withObject:event listener:failureCallback
-                            thisObject:nil];
+            NSLog(@"login failure callback hit");
+
+            NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
+
+            [failureCallback call:returnArray thisObject:nil];
+
         } withTimeout:timeToLive];
     }
 
@@ -361,6 +345,12 @@
                    priority:priority
                  timeToLive:timeToLive
               persistToDisk:persistToDisk];
+}
+
+- (void)dealloc {
+    //[_joobMobile release];
+    [_logoutCompleteCallback release];
+    [super dealloc];
 }
 
 @end
