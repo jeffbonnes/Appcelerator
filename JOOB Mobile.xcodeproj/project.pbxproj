@@ -68,9 +68,9 @@
 		BC7F68ED174335EA001E0FC9 /* JoobMobileVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7F68C3174335EA001E0FC9 /* JoobMobileVersion.h */; };
 		BC7F68EE174335EA001E0FC9 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7F68C4174335EA001E0FC9 /* JSONKit.h */; };
 		BC7F68EF174335EA001E0FC9 /* KeychainItemWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7F68C5174335EA001E0FC9 /* KeychainItemWrapper.h */; };
-		BC7F68F0174335EA001E0FC9 /* libJoobMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F68C7174335EA001E0FC9 /* libJoobMobile.a */; };
 		BC90C98E17379A85003838AA /* ComJadesoftwareJoobMobileProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = BC90C98C17379A85003838AA /* ComJadesoftwareJoobMobileProxy.h */; };
 		BC90C98F17379A85003838AA /* ComJadesoftwareJoobMobileProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BC90C98D17379A85003838AA /* ComJadesoftwareJoobMobileProxy.m */; };
+		BCF7D2501744682800FD5B03 /* libJoobMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC7F68C7174335EA001E0FC9 /* libJoobMobile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,8 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF7D2501744682800FD5B03 /* libJoobMobile.a in Frameworks */,
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
-				BC7F68F0174335EA001E0FC9 /* libJoobMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

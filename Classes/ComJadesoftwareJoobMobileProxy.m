@@ -21,6 +21,7 @@
 #import "JoobMobileAuthenticationUtils.h"
 #import "JoobMobileMessage.h"
 #import "JoobMobileSettings.h"
+#import "JoobMobileRemoteLogger.h"
 
 @interface ComJadesoftwareJoobMobileProxy()
 
@@ -80,6 +81,42 @@
 
 #pragma JOOB Mobile delegate methods
 
+
+- (void) multiFactorAuthenticationRequired:(JoobMobileMultiFactorToken *)token
+{
+    if ([self _hasListeners:@"multifactorAuthenticationRequiredEvent"]) {
+        
+        NSDictionary *event = @{@"token": token};
+        
+        [self fireEvent:@"multifactorAuthenticationRequiredEvent" withObject:event];
+        
+        NSLogDebug(@"MultiFactor Authentication Required Event Fired.");
+    }
+}
+
+- (void) deviceRegistrationRequired
+{
+    if ([self _hasListeners:@"deviceRegistrationRequiredEvent"]) {
+        
+        [self fireEvent:@"deviceRegistrationRequiredEvent" withObject:nil];
+        
+        NSLogDebug(@"Device Registration Required Event Fired.");
+    }
+    
+}
+
+- (void) applicationDisabled:(NSString*) reason
+{
+    if ([self _hasListeners:@"applicationDisabledEvent"]) {
+        
+        NSDictionary *event = @{@"reason": reason};
+        
+        [self fireEvent:@"applicationDisabledEvent" withObject:event];
+        
+        NSLogDebug(@"Application Disabled Event Fired.");
+    }
+}
+
 -(void)logoutCompleted
 {
     NSLog(@"[INFO] Received logout callback");
@@ -113,7 +150,7 @@
         NSDictionary *event = [self createEventFromJoobMobileHttpResult:result];
         [self _fireEventToListener:@"success" withObject:event listener:callback thisObject:nil];
     } else {
-        NSLog(@"[INFO] - No callback provided to the JoobMobile Appcelerator Module.");
+        NSLogDebug(@"No callback provided to the JoobMobile Appcelerator Module.");
     }
 }
 
@@ -218,28 +255,21 @@
     NSString *rootDocumentUri = [TiUtils stringValue:[args objectAtIndex:argRootDocumentUri]];
     int timeToLive = [TiUtils intValue:[args objectAtIndex:argTimeout]];
 
-    if (rootDocumentUri != nil) {
-        NSLog(@"url wasnt nil");
-        [_joobMobile login:[NSURL URLWithString:rootDocumentUri] onSuccess:^(NSString *result) {
-            NSLog(@"login success callback hit");
-
-            NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
-
-            [successCallback call:returnArray thisObject:nil];
-
-        } onFailure:^(NSString *result) {
-            NSLog(@"login failure callback hit");
-
-            NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
-
-            [failureCallback call:returnArray thisObject:nil];
-
-        } withTimeout:timeToLive];
-    } else {
+    [_joobMobile login:[NSURL URLWithString:rootDocumentUri] onSuccess:^(NSString *result) {
+        NSLog(@"login success callback hit");
         
-    }
-
-    NSLog(@"[INFO] submitted login for processing");
+        NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
+        
+        [successCallback call:returnArray thisObject:nil];
+        
+    } onFailure:^(NSString *result) {
+        NSLog(@"login failure callback hit");
+        
+        NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
+        
+        [failureCallback call:returnArray thisObject:nil];
+        
+    } withTimeout:timeToLive];
 }
 
 
