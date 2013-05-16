@@ -52,34 +52,7 @@
 }
 
 
-// Returns the Uri from the root document for the key provided.
--(id)getRootDocumentUri:(id)value
-{
-    ENSURE_SINGLE_ARG(value,NSString);
-    NSURL *url = [JoobMobileSettings getRootDocumentUri:[TiUtils stringValue:value]];
-    return [url absoluteString];
-}
-
-
-// Sets default basic authentication credentials.
--(void)setBasicAuthenticationToken:(id)args
-{
-    
-    NSLog(@"Setting basic authentication token");
-    
-    enum Args {
-        argUsername = 0,
-        argPassword,
-        argCount
-    };
-    
-    ENSURE_ARG_COUNT(args, argCount);
-    
-    [JoobMobileAuthenticationUtils setBasicAuthenticationToken:[TiUtils stringValue:[args objectAtIndex:argUsername]] password:[TiUtils stringValue:[args objectAtIndex:argPassword]]];
-}
-
-
-#pragma JOOB Mobile delegate methods
+#pragma -mark JOOB Mobile delegate methods
 
 
 - (void) multiFactorAuthenticationRequired:(JoobMobileMultiFactorToken *)token
@@ -127,7 +100,7 @@
     }
 }
 
-#pragma CallBacks
+#pragma -mark CallBacks
 
 
 -(void)fireJavascriptCallback:(NSObject*)state httpResult:(JoobMobileHttpResult*)result wasSuccessful:(BOOL)success
@@ -221,8 +194,33 @@
 }
 
 
-#pragma Exposed methods
+#pragma -mark Exposed methods
 
+// Returns the Uri from the root document for the key provided.
+-(id)getRootDocumentUri:(id)value
+{
+    ENSURE_SINGLE_ARG(value,NSString);
+    NSURL *url = [JoobMobileSettings getRootDocumentUri:[TiUtils stringValue:value]];
+    return [url absoluteString];
+}
+
+
+// Sets default basic authentication credentials.
+-(void)setBasicAuthenticationToken:(id)args
+{
+    
+    NSLog(@"Setting basic authentication token");
+    
+    enum Args {
+        argUsername = 0,
+        argPassword,
+        argCount
+    };
+    
+    ENSURE_ARG_COUNT(args, argCount);
+    
+    [JoobMobileAuthenticationUtils setBasicAuthenticationToken:[TiUtils stringValue:[args objectAtIndex:argUsername]] password:[TiUtils stringValue:[args objectAtIndex:argPassword]]];
+}
 
 // Sets an authentication token for use with custom authentication server side.
 -(void)setUserToken:(id)args
