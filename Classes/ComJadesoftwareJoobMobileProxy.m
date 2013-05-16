@@ -196,6 +196,32 @@
 
 #pragma -mark Exposed methods
 
+- (void) registerDevice:(id)token
+{
+    ENSURE_SINGLE_ARG(token,NSString);
+    
+    [_joobMobile registerDevice:token];
+}
+
+
+- (void) respondToMultiFactorChallenge:(id)args
+{
+    enum Args {
+        argToken = 0,
+        argResponse,
+        argCount
+    };
+    
+    ENSURE_ARG_COUNT(args, argCount);
+    
+    JoobMobileMultiFactorToken *token = [args objectAtIndex:argToken];
+    
+    NSDictionary *response = [args objectAtIndex:argResponse];
+    
+    [_joobMobile respondToMultiFactorChallenge:token withResponse:response];
+    
+}
+
 // Returns the Uri from the root document for the key provided.
 -(id)getRootDocumentUri:(id)value
 {
