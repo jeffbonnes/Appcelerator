@@ -264,6 +264,8 @@
 {
     NSLog(@"[INFO] JoobMobile Login method");
     
+    ENSURE_UI_THREAD(login, args);
+    
     enum Args {
         argRootDocumentUri = 0,
         argSuccessCallback,
