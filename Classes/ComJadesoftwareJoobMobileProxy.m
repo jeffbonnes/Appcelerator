@@ -391,9 +391,9 @@
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
     
-    // Define callbacks.
-    SEL successCallback = @selector(postSuccessCallback:joobMobileHttpResult:);
-    SEL failureCallback = @selector(postFailureCallback:joobMobileHttpResult:);
+    // Define callbacks for success and failure.
+    KrollCallback *successCallback = [args valueForKey:@"onSuccess"];
+    KrollCallback *failureCallback = [args valueForKey:@"onFailure"];
     
     // Set priority and time to live values.
     NSString *priority = [TiUtils stringValue:[args valueForKey:@"priority"]];
@@ -409,21 +409,23 @@
     if ([args valueForKey:@"persistToDisk"] != NULL) {
         persistToDisk =  [TiUtils boolValue:[args valueForKey:@"persistToDisk"]];
     }
-    
+
     // Call JoobMobile and return UUID.
     return [_joobMobile post:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]]
-                   postData:[TiUtils stringValue:[args valueForKey:@"postData"]]
-                  userState:args
-             callbackTarget:self
-            successCallback:successCallback
-            failureCallback:failureCallback
-                   priority:priority
-                 timeToLive:timeToLive
-              persistToDisk:persistToDisk];
+                    postData:[TiUtils stringValue:[args valueForKey:@"postData"]]
+                    onSuccess:^(JoobMobileHttpResult *result) {
+                        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+                        NSArray *returnArray = @[resultDictionary];
+                        [successCallback call:returnArray thisObject:nil];
+                    } onFailure:^(JoobMobileHttpResult *result) {
+                        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+                        NSArray *returnArray = @[resultDictionary];
+                        [failureCallback call:returnArray thisObject:nil];
+                    } priority:priority timeToLive:timeToLive];
 }
 
 - (void)dealloc {
-    //[_joobMobile release];
+    [_joobMobile release];
     [_logoutCompleteCallback release];
     [super dealloc];
 }
