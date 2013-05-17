@@ -234,6 +234,7 @@
 // Sets default basic authentication credentials.
 -(void)setBasicAuthenticationToken:(id)args
 {
+    ENSURE_UI_THREAD(setBasicAuthenticationToken, args);
     
     NSLog(@"Setting basic authentication token");
     
@@ -245,7 +246,13 @@
     
     ENSURE_ARG_COUNT(args, argCount);
     
-    [JoobMobileAuthenticationUtils setBasicAuthenticationToken:[TiUtils stringValue:[args objectAtIndex:argUsername]] password:[TiUtils stringValue:[args objectAtIndex:argPassword]]];
+    NSString *username = [TiUtils stringValue:[args objectAtIndex:argUsername]];
+    
+    NSString *password = [TiUtils stringValue:[args objectAtIndex:argPassword]];
+    
+    NSLogDebug(@"Username = %@", username);
+    
+    [JoobMobileAuthenticationUtils setBasicAuthenticationToken:username password:password];
 }
 
 // Sets an authentication token for use with custom authentication server side.
@@ -285,15 +292,17 @@
         NSLog(@"login success callback hit");
         
         NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
-        
-        [successCallback call:returnArray thisObject:nil];
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [successCallback call:returnArray thisObject:nil];
+        });
+
     } onFailure:^(NSString *result) {
         NSLog(@"login failure callback hit");
         
         NSArray* returnArray = [NSArray arrayWithObjects: result, nil];
-        
-        [failureCallback call:returnArray thisObject:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [failureCallback call:returnArray thisObject:nil];
+        });
         
     } withTimeout:timeToLive];
 }
@@ -316,22 +325,16 @@
 {
     ENSURE_SINGLE_ARG(args,NSDictionary);
     
+    // Make sure the payload IS a NSDictionary
+    NSDictionary *payload = [args valueForKey:@"payload"];
+    
     // Define callbacks for success and failure.
-    SEL successCallback = @selector(sendDataItemSuccessCallback:joobMobileHttpResult:);
-    SEL failureCallback = @selector(sendDataItemFailureCallback:joobMobileHttpResult:);
+    KrollCallback *successCallback = [args valueForKey:@"onSuccess"];
+    KrollCallback *failureCallback = [args valueForKey:@"onFailure"];
     
     // Set priority and time to live values.
     NSString *priority = [TiUtils stringValue:[args valueForKey:@"priority"]];
     NSInteger timeToLive = [TiUtils intValue:[args valueForKey:@"timeToLive"]];
-    
-    // If priority and time to live are not defined set sane defaults.
-    if (priority == nil) {priority = MESSAGE_PRIORITY_NORMAL;}
-    if ([args valueForKey:@"timeToLive"] == nil) {timeToLive = TIMETOLIVE_TRYONCE;}
-    
-    // Create the data item payload.
-    NSMutableDictionary *messagePayload = [[NSMutableDictionary alloc] init];
-    [messagePayload setValue:[TiUtils stringValue:[args valueForKey:@"payload"]]
-                      forKey:[TiUtils stringValue:[args valueForKey:@"dataType"]]];
     
     // Set default persist value so if its not passed in we go with the safe option.
     BOOL persistToDisk = true;
@@ -342,11 +345,15 @@
     
     NSLog(@"[INFO] Calling JoobMobile API to send Dataitem", _joobMobile);
     
-    return [_joobMobile sendDataItem:messagePayload dataType:[TiUtils stringValue:[args valueForKey:@"dataType"]] onSuccess:^(JoobMobileHttpResult *result) {
-        [self fireJavascriptCallback:nil httpResult:result wasSuccessful:true];
+    return [_joobMobile sendDataItem:payload dataType:[TiUtils stringValue:[args valueForKey:@"dataType"]] onSuccess:^(JoobMobileHttpResult *result) {
+        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+        NSArray *returnArray = @[resultDictionary];
+        [successCallback call:returnArray thisObject:nil];
         
     } onFailure:^(JoobMobileHttpResult *result) {
-        [self fireJavascriptCallback:nil httpResult:result wasSuccessful:false];
+        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+        NSArray *returnArray = @[resultDictionary];
+        [failureCallback call:returnArray thisObject:nil];
     }];
 }
 
