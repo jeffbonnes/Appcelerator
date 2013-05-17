@@ -363,8 +363,8 @@
     ENSURE_SINGLE_ARG(args,NSDictionary);
     
     // Define callbacks for success and failure.
-    SEL successCallback = @selector(getSuccessCallback:joobMobileHttpResult:);
-    SEL failureCallback = @selector(getFailureCallback:joobMobileHttpResult:);
+    KrollCallback *successCallback = [args valueForKey:@"onSuccess"];
+    KrollCallback *failureCallback = [args valueForKey:@"onFailure"];
     
     // Set priority and time to live values.
     NSString *priority = [TiUtils stringValue:[args valueForKey:@"priority"]];
@@ -373,15 +373,17 @@
     // Set priority and time to live values to sane defaults if they are not passed in.
     if (priority == nil) {priority = MESSAGE_PRIORITY_NORMAL;}
     if ([args valueForKey:@"timeToLive"] == nil) {timeToLive = TIMETOLIVE_TRYONCE;}
-    
-    // Call JoobMobile and return UUID
-    return [_joobMobile get:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]]
-                 userState:args
-            callbackTarget:self
-           successCallback:successCallback
-           failureCallback:failureCallback
-                  priority:priority
-                timeToLive:timeToLive];
+
+    [_joobMobile get:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]]
+      onSuccess:^(JoobMobileHttpResult *result) {
+        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+        NSArray *returnArray = @[resultDictionary];
+        [successCallback call:returnArray thisObject:nil];
+    } onFailure:^(JoobMobileHttpResult *result) {
+        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+        NSArray *returnArray = @[resultDictionary];
+        [failureCallback call:returnArray thisObject:nil];
+    } priority:priority timeToLive:timeToLive];
 }
 
 
