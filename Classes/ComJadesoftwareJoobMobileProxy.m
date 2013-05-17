@@ -146,54 +146,6 @@
 }
 
 
--(void)sendDataItemSuccessCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
-{
-    NSLog(@"[INFO] Received sendDataItem success callback: %@",result);
-    
-    [self fireJavascriptCallback:userState httpResult:result wasSuccessful:true];
-}
-
-
--(void)sendDataItemFailureCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
-{
-    NSLog(@"[INFO] Received sendDataItem failure callback: %@",result);
-    
-    [self fireJavascriptCallback:userState httpResult:result wasSuccessful:false];
-}
-
-
--(void)postSuccessCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
-{
-    NSLog(@"[INFO] Received post success callback: %@",result);
-    
-    [self fireJavascriptCallback:userState httpResult:result wasSuccessful:true];
-}
-
-
--(void)postFailureCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
-{
-    NSLog(@"[INFO] Received post failure callback: %@",result);
-    
-    [self fireJavascriptCallback:userState httpResult:result wasSuccessful:false];
-}
-
-
--(void)getSuccessCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
-{
-    NSLog(@"[INFO] Received get success callback: %@",result);
-    
-    [self fireJavascriptCallback:userState httpResult:result wasSuccessful:true];
-}
-
-
--(void)getFailureCallback:(NSObject*) userState joobMobileHttpResult:(JoobMobileHttpResult*) result
-{
-    NSLog(@"[INFO] Received get failure callback: %@",result);
-    
-    [self fireJavascriptCallback:userState httpResult:result wasSuccessful:false];
-}
-
-
 #pragma -mark Exposed methods
 
 - (void) registerDevice:(id)token
@@ -249,8 +201,6 @@
     NSString *username = [TiUtils stringValue:[args objectAtIndex:argUsername]];
     
     NSString *password = [TiUtils stringValue:[args objectAtIndex:argPassword]];
-    
-    NSLogDebug(@"Username = %@", username);
     
     [JoobMobileAuthenticationUtils setBasicAuthenticationToken:username password:password];
 }
