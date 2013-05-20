@@ -16,12 +16,11 @@
 
 #import "ComJadesoftwareJoobMobileProxy.h"
 #import "TiUtils.h"
-#import "TiBlob.h"
 #import "JoobMobileFactory.h"
 #import "JoobMobileAuthenticationUtils.h"
 #import "JoobMobileMessage.h"
-#import "JoobMobileSettings.h"
 #import "JoobMobileRemoteLogger.h"
+#import "JoobMobileParser.h"
 
 @interface ComJadesoftwareJoobMobileProxy()
 
@@ -103,31 +102,6 @@
 #pragma -mark CallBacks
 
 
--(void)fireJavascriptCallback:(NSObject*)state httpResult:(JoobMobileHttpResult*)result wasSuccessful:(BOOL)success
-{
-    
-    // Define callback.
-    KrollCallback* callback;
-    
-    
-    // If it is a successful response call getJavascriptCallbackFromState with appropriate parameters.
-    if (success) {
-        callback = [self getJavascriptCallbackFromState:state type:@"success"];
-    } else {
-        callback = [self getJavascriptCallbackFromState:state type:@"failure"];
-    }
-    
-    
-    // If we have a callback attempt to fire it.
-    if (callback) {
-        NSDictionary *event = [self createEventFromJoobMobileHttpResult:result];
-        [self _fireEventToListener:@"success" withObject:event listener:callback thisObject:nil];
-    } else {
-        NSLogDebug(@"No callback provided to the JoobMobile Appcelerator Module.");
-    }
-}
-
-
 -(KrollCallback*)getJavascriptCallbackFromState:(NSObject*)state type:(NSString*)type
 {
     return [(NSDictionary*)state objectForKey:type];
@@ -136,10 +110,24 @@
 
 -(NSDictionary*)createEventFromJoobMobileHttpResult:(JoobMobileHttpResult*)result
 {
+    // Nasty for the moment but ...
+
+    id body = nil;
+
+    NSString *bodyString = [[NSString alloc] initWithData:result.responseBody encoding:NSUTF8StringEncoding];
+
+    NSLogDebug(@"BodyString: %@", bodyString);
+
+    if (bodyString != nil) {
+        body = bodyString;
+    }  else {
+        body =  [[TiBlob alloc] initWithData:result.responseBody mimetype:@"application/octet-stream"];
+    }
+
     NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:
                            result.uuid,@"uuid",
                            result.responseHeaders, @"headers",
-                           [[[TiBlob alloc] initWithData:result.responseBody mimetype:@"application/octet-stream"] autorelease], @"body",
+                           body, @"body",
                            [NSNumber numberWithInt:result.statusCode],@"status",
                            nil];
     return event;
@@ -147,6 +135,13 @@
 
 
 #pragma -mark Exposed methods
+
+- (id) parseMicrosoftDate:(id)arg
+{
+    ENSURE_SINGLE_ARG(arg,NSString);
+
+    return [JoobMobileParser getDateFromMSDate:[TiUtils stringValue:arg]];
+}
 
 - (void) registerDevice:(id)token
 {
@@ -186,7 +181,7 @@
 // Sets default basic authentication credentials.
 -(void)setBasicAuthenticationToken:(id)args
 {
-    ENSURE_UI_THREAD(setBasicAuthenticationToken, args);
+    ENSURE_UI_THREAD(setBasicAuthenticationToken, args)
     
     NSLog(@"Setting basic authentication token");
     
@@ -221,7 +216,7 @@
 {
     NSLog(@"[INFO] JoobMobile Login method");
     
-    ENSURE_UI_THREAD(login, args);
+    ENSURE_UI_THREAD(login, args)
     
     enum Args {
         argRootDocumentUri = 0,
@@ -298,12 +293,12 @@
     return [_joobMobile sendDataItem:payload dataType:[TiUtils stringValue:[args valueForKey:@"dataType"]] onSuccess:^(JoobMobileHttpResult *result) {
         NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
         NSArray *returnArray = @[resultDictionary];
-        [successCallback call:returnArray thisObject:nil];
+        [successCallback call:returnArray thisObject:self];
         
     } onFailure:^(JoobMobileHttpResult *result) {
         NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
         NSArray *returnArray = @[resultDictionary];
-        [failureCallback call:returnArray thisObject:nil];
+        [failureCallback call:returnArray thisObject:self];
     }];
 }
 
@@ -324,16 +319,17 @@
     if (priority == nil) {priority = MESSAGE_PRIORITY_NORMAL;}
     if ([args valueForKey:@"timeToLive"] == nil) {timeToLive = TIMETOLIVE_TRYONCE;}
 
-    [_joobMobile get:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]]
-      onSuccess:^(JoobMobileHttpResult *result) {
-        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
-        NSArray *returnArray = @[resultDictionary];
-        [successCallback call:returnArray thisObject:nil];
-    } onFailure:^(JoobMobileHttpResult *result) {
-        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
-        NSArray *returnArray = @[resultDictionary];
-        [failureCallback call:returnArray thisObject:nil];
-    } priority:priority timeToLive:timeToLive];
+    // Call JoobMobile and return UUID.
+    return [_joobMobile get:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]]
+            onSuccess:^(JoobMobileHttpResult *result) {
+                NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+                NSArray *returnArray = @[resultDictionary];
+                [successCallback call:returnArray thisObject:self];
+            } onFailure:^(JoobMobileHttpResult *result) {
+                NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+                NSArray *returnArray = @[resultDictionary];
+                [failureCallback call:returnArray thisObject:self];
+            } priority:priority timeToLive:timeToLive];
 }
 
 
@@ -362,16 +358,16 @@
 
     // Call JoobMobile and return UUID.
     return [_joobMobile post:[NSURL URLWithString:[TiUtils stringValue:[args valueForKey:@"url"]]]
-                    postData:[TiUtils stringValue:[args valueForKey:@"postData"]]
-                    onSuccess:^(JoobMobileHttpResult *result) {
-                        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
-                        NSArray *returnArray = @[resultDictionary];
-                        [successCallback call:returnArray thisObject:nil];
-                    } onFailure:^(JoobMobileHttpResult *result) {
-                        NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
-                        NSArray *returnArray = @[resultDictionary];
-                        [failureCallback call:returnArray thisObject:nil];
-                    } priority:priority timeToLive:timeToLive];
+            postData:[TiUtils stringValue:[args valueForKey:@"postData"]]
+            onSuccess:^(JoobMobileHttpResult *result) {
+                NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+                NSArray *returnArray = @[resultDictionary];
+                [successCallback call:returnArray thisObject:self];
+            } onFailure:^(JoobMobileHttpResult *result) {
+                NSDictionary *resultDictionary = [self createEventFromJoobMobileHttpResult:result];
+                NSArray *returnArray = @[resultDictionary];
+                [failureCallback call:returnArray thisObject:self];
+            } priority:priority timeToLive:timeToLive];
 }
 
 - (void)dealloc {
