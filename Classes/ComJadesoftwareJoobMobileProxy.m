@@ -89,6 +89,19 @@
     }
 }
 
+- (void) deviceInformationUpdated:(NSDictionary*) information
+{
+    if ([self _hasListeners:@"deviceInformationUpdated"]) {
+
+        NSDictionary *event = @{@"information": information};
+
+        [self fireEvent:@"deviceInformationUpdated" withObject:event];
+
+        NSLogDebug(@"Device Information Updated Event Fired.");
+    }
+
+}
+
 -(void)logoutCompleted
 {
     NSLog(@"[INFO] Received logout callback");
