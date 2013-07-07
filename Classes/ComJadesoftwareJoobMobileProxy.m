@@ -230,21 +230,13 @@
     NSLog(@"[INFO] JoobMobile Login method");
     
     ENSURE_UI_THREAD(login, args)
-    
-    enum Args {
-        argRootDocumentUri = 0,
-        argSuccessCallback,
-        argFailureCallback,
-        argTimeout,
-        argCount
-    };
-    
-    ENSURE_ARG_COUNT(args, argCount);
 
-    KrollCallback* successCallback = [[args objectAtIndex:argSuccessCallback] retain];
-    KrollCallback* failureCallback = [[args objectAtIndex:argFailureCallback] retain];
-    NSString *rootDocumentUri = [TiUtils stringValue:[args objectAtIndex:argRootDocumentUri]];
-    int timeToLive = [TiUtils intValue:[args objectAtIndex:argTimeout]];
+    ENSURE_SINGLE_ARG(args, NSDictionary);
+
+    KrollCallback* successCallback = [[args objectForKey:@"onSuccess"] retain];
+    KrollCallback* failureCallback = [[args objectForKey:@"onFailure"] retain];
+    NSString *rootDocumentUri = [TiUtils stringValue:[args objectForKey:@"url"]];
+    int timeToLive = [TiUtils intValue:[args objectForKey:@"timeToLive"]];
 
     [_joobMobile login:[NSURL URLWithString:rootDocumentUri] onSuccess:^(NSString *result) {
         NSLog(@"login success callback hit");
