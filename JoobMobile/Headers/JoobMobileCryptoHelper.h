@@ -21,6 +21,12 @@ extern NSString *const Salt;
 @interface JoobMobileCryptoHelper : NSObject
 
 /**
+* Returns an initialised instance of the JoobMobileCryptoHelper.
+* @returns JoobMobileCryptoHelper An initialised instance of JoobMobileCryptoHelper.
+*/
++ (id)sharedInstance;
+
+/**
  Method to AES Encrypt a string.
  @param string The string to encrypt
  @param password A unique key 
@@ -29,41 +35,41 @@ extern NSString *const Salt;
  @param error Pointer to NSError for call
  @returns NSString A base64 encoded string of the encrypted value.
  */
-+ (NSString *)encryptString:(NSString *)string
+- (NSString *)encryptString:(NSString *)string
                    password:(NSData *)password
                        salt:(NSString *)salt
                          iv:(NSData*)iv
                       error:(NSError **)error;
 
-+(NSString *)decryptString:(NSString *)string
+-(NSString *)decryptString:(NSString *)string
                      error:(NSError **)error;
 
-+ (NSString *)decryptString:(NSString *)string
+- (NSString *)decryptString:(NSString *)string
                    password:(NSData *)password
                        salt:(NSString *)salt
                          iv:(NSData*)iv
                       error:(NSError **)error;
 
-+ (NSData *)encryptData:(NSData *)data
+- (NSData *)encryptData:(NSData *)data
                password:(NSData *)password
                      iv:(NSData *)iv
                    salt:(NSData *)salt
                   error:(NSError **)error;
 
-+ (NSData *)decryptData:(NSData *)data
+- (NSData *)decryptData:(NSData *)data
                password:(NSData *)password
                      iv:(NSData *)iv
                    salt:(NSData *)salt
                   error:(NSError **)error;
 
-+ (NSData *)getRandomIv;
+- (NSData *)getRandomIv;
 
-+ (NSData *)getIvFromPayload:(NSString*)payload;
+- (NSData *)getIvFromPayload:(NSString*)payload;
 
-+ (NSString*)getMessageFromPayload:(NSString*)payload;
+- (NSString*)getMessageFromPayload:(NSString*)payload;
 
-+ (NSData*)generateKey:(NSString *)password salt:(NSString*)salt;
+- (NSData*)generateKey:(NSString *)password salt:(NSString*)salt;
 
-+ (NSData*)getKey;
+- (NSData*)getKey;
 
 @end

@@ -19,8 +19,8 @@
 #import "JoobMobileFactory.h"
 #import "JoobMobileAuthenticationUtils.h"
 #import "JoobMobileMessage.h"
-#import "JoobMobileRemoteLogger.h"
 #import "JoobMobileParser.h"
+#import "JoobMobileConstants.h"
 
 @interface ComJadesoftwareJoobMobileProxy()
 

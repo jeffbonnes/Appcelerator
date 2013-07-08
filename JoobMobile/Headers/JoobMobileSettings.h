@@ -224,5 +224,4 @@
 */
 + (void) setApplicationVersion:(NSString *)version;
 
-
 @end

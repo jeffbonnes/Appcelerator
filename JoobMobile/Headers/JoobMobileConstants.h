@@ -11,10 +11,13 @@
 
  ****************************************************************************/
 
+#import "asl.h"
+
 // Authentication Notification constant
 extern NSString *const JoobMobileAuthenticationStatusChanged;
 extern NSString *const JoobMobileMultiFactorAuthenticationRequired;
 extern NSString *const JoobMobileDeviceRegistrationRequired;
+extern NSString *const JoobMobileDeviceInformationUpdated;
 
 // Authentication Status constants
 extern NSString *const Authenticating;
@@ -52,3 +55,36 @@ typedef enum messageStates
             FAILED,
             MFAREQUIRED
         } MessageState;
+
+// Security constants
+int static KeyStrengtheningIterations = 1024;
+
+// Logging constants
+// Based on Peter Hosey's series on asl_log and example by Karl Kuehn
+
+#ifndef ASL_KEY_FACILITY
+#define ASL_KEY_FACILITY "JOOB Mobile Facility"
+#endif
+
+#define NSLog_level(log_level, format, ...) asl_log(asl_open(NULL, NULL, ASL_OPT_STDERR), NULL, log_level, "%s", [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);
+
+#define NSLogEmergency(format, ...) NSLog_level(ASL_LEVEL_EMERG, format, ##__VA_ARGS__)
+#define NSLogAlert(format, ...) NSLog_level(ASL_LEVEL_ALERT, format, ##__VA_ARGS__)
+#define NSLogCritical(format, ...) NSLog_level(ASL_LEVEL_CRIT, format, ##__VA_ARGS__)
+#define NSLogError(format, ...) NSLog_level(ASL_LEVEL_ERR, format, ##__VA_ARGS__)
+#define NSLogWarning(format, ...) NSLog_level(ASL_LEVEL_WARNING, format, ##__VA_ARGS__)
+#define NSLogNotice(format, ...) NSLog_level(ASL_LEVEL_NOTICE, format, ##__VA_ARGS__)
+#define NSLogInfo(format, ...) NSLog_level(ASL_LEVEL_INFO, format, ##__VA_ARGS__)
+#define NSLogDebug(format, ...) NSLog_level(ASL_LEVEL_DEBUG, format, ##__VA_ARGS__)
+
+#define Emergency = 0;
+#define Alert = 1;
+#define Critical = 2;
+#define Error = 3;
+#define Warning = 4;
+#define Notice = 5;
+#define Info = 6;
+#define Debug = 7;
+
+// Prints to stdout only
+#define NSLogPrint(format, ...) printf("%s\n", [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String])

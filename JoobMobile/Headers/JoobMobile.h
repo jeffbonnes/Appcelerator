@@ -48,6 +48,12 @@
  */
 - (void) applicationDisabled:(NSString*) reason;
 
+
+/**
+* A delegate method called when the device information has been updated.
+*/
+- (void) deviceInformationUpdated:(NSDictionary*) information;
+
 @end
 
 
@@ -55,12 +61,6 @@
  The central Joob Mobile class, use this to send and retrieve data from the Joob Mobile Gateway.
  */
 @interface JoobMobile : NSObject <JoobMobileAuthenticationDelegate>
-
-
-/**
- The delegate class that will be notified when login and logout have completed.
- */
-@property (nonatomic, retain) id <JoobMobileDelegate> delegate;
 
 
 /**

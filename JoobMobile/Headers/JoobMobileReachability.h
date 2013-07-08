@@ -67,10 +67,7 @@ typedef enum {
 //reachabilityWithHostName- Use to check the reachability of a particular host name. 
 + (JoobMobileReachability*) reachabilityWithHostName: (NSString*) hostName;
 
-//reachabilityWithAddress- Use to check the reachability of a particular IP address. 
-+ (JoobMobileReachability*) reachabilityWithAddress: (const struct sockaddr_in*) hostAddress;
-
-//reachabilityForInternetConnection- checks whether the default route is available.  
+//reachabilityForInternetConnection- checks whether the default route is available.
 //  Should be used by applications that do not connect to a particular host
 + (JoobMobileReachability*) reachabilityForInternetConnection;
 
