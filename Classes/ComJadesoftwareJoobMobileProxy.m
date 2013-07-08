@@ -35,12 +35,15 @@
 
 -(void) _configure
 {
-    
-    _joobMobile = [[JoobMobileFactory getApi:self] retain];
-    
-    NSLog(@"[INFO] JoobMobile is initialized - %@", _joobMobile);
-    
+    if (_joobMobile == nil)
+    {
+        _joobMobile = [[JoobMobileFactory getApi:self] retain];
+
+    }
+
     [super _configure];
+
+    NSLog(@"[INFO] JoobMobile is initialized - %@", _joobMobile);
 }
 
 
@@ -221,6 +224,20 @@
     // As the args are already converted to a NSDictionary type pass straight through,
     // Mobile will throw an exception if the token is invalid.
     [JoobMobileSettings setUserToken:args];
+}
+
+// Enables JOOB Mobile to use 3G data if available.
+-(void)mobileData:(id)value
+{
+    ENSURE_SINGLE_ARG(value,NSString);
+    [JoobMobileSettings mobileData:[TiUtils boolValue:value]];
+}
+
+// Allows JOOB Mobile to access endpoint signed with invalid SSL certificates.
+-(void)allowInvalidSsl:(id)value
+{
+    ENSURE_SINGLE_ARG(value,NSString);
+    [JoobMobileSettings allowInvalidSsl:[TiUtils boolValue:value]];
 }
 
 
